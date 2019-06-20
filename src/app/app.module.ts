@@ -8,7 +8,7 @@ import { TaskesComponent } from './company/taskes/taskes.component';
 import { CompanyModule } from './company/company.module';
 import { ServiceService } from './Services/service.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CompanyModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule
   ],
   providers: [ServiceService],

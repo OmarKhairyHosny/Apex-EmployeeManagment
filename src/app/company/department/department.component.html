@@ -8,26 +8,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-     <a routerLink="/Home/Empolyee/id"> <td >dMark</td></a>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    <ng-container *ngFor="let Deb of Departments">
+        <tr>
+            <th scope="row">1</th>
+           <a routerLink="/Home/Empolyee/id"> <td >{{Deb.departmentName_En}}</td></a>
+            <td>{{Deb.departmentName_Ar}}</td>
+            <td>{{Deb.id}}</td>
+          </tr>
+    </ng-container>
+    
+   
+   
   </tbody>
 </table>
 <a     routerLink="/Home"><h1>Home</h1></a>
-<a     routerLink="/Home/Empolyee/id"><h1>Home</h1></a>
-
+<a     routerLink="/Home/Empolyee/id"><h1>Home</h1></a> 
