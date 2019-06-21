@@ -1,6 +1,5 @@
 
 <h1>Our Empolyee</h1>
-<a></a>
 <div class="container">
     <button class="btn btn-success"  routerLink="/Home"><i class="fa fa-home" aria-hidden="true"></i></button>
     <button class="btn btn-success" data-toggle="modal" data-target="#AddEmpolyee">Add new Empolyee <i class="fa fa-plus-square"></i></button>
@@ -8,27 +7,24 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Empolyee</th>
+        <th scope="col">Name</th>
         <th scope="col">Action</th>
-       
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th data-toggle="modal" data-target="#EmpolyeeDetails" scope="row">1</th>
-        <td >
-          <i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#EditEmpolyee" style="font-size:24px"></i>
-          <i class="fa fa-times-circle" style="font-size:24px"></i>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-      </tr>
+        <ng-container *ngFor="let Emp of Employees">
+            <tr>
+                <td ><a>{{Emp.name_En}}</a></td>
+                <td >
+                  <i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#EditEmpolyee" style="font-size:24px"></i>
+                  <i class="fa fa-times-circle" style="font-size:24px"></i>
+                  <a data-toggle="modal" data-target="#EmpolyeeDetails" scope="row">Show Details</a>
+                  </td>
+              </tr>
+        </ng-container>
+
+     
+       
     </tbody>
   </table>
 </div>

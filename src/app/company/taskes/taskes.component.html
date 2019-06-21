@@ -1,4 +1,161 @@
-<p>
-  taskes works!
-</p>
-<a     routerLink="/Home"><h1>Home</h1></a>
+
+<h1>Our Tasks</h1>
+<div class="container">
+    <button class="btn btn-success"  routerLink="/Home"><i class="fa fa-home" aria-hidden="true"></i></button>
+    <button class="btn btn-success" data-toggle="modal" data-target="#AddTask">Add new Task <i class="fa fa-plus-square"></i></button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let task of Tasks">
+            <tr>
+                <td ><a>{{task.title}}</a></td>
+                <td >
+                  <i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#EditTask" style="font-size:24px"></i>
+                  <i class="fa fa-times-circle" style="font-size:24px"></i>
+                  <a data-toggle="modal" data-target="#TaskDetails" scope="row">Show Details</a>
+                  </td>
+              </tr>
+        </ng-container>
+
+     
+       
+    </tbody>
+  </table>
+</div>
+
+<!-- Add Model/ -->
+
+<div class="modal fade" id="AddTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body text">
+        <h5>Add New Empolyee</h5>
+        <form #f="ngForm">
+          <div class="form-group">
+            <label for="name_ar">Name In Arabic:</label>
+            <input type="text" ngModel name="name_ar" required class="form-control" id="name_ar">
+          </div>
+          <div class="form-group">
+            <label for="name_en">Name In English:</label>
+            <input type="text" required  ngModel name="name_en" class="form-control" id="name_en">
+          </div>
+          <div class="form-group">
+            <label for="dpt">Department:</label>
+            <input type="text" required  ngModel name="Department"  class="form-control" id="dpt">
+          </div>
+          <div class="form-group">
+            <label for="mng">Manager:</label>
+            <input type="text" required ngModel name="Manager" class="form-control" id="mng">
+          </div>
+          <div class="form-group">
+            <label for="JnD">Join Date:</label>
+            <input type="text" required  ngModel name="date" class="form-control" id="JnD">
+          </div>
+          <div class="modal-footer">
+            <div class="m-auto">
+              <button type="submit" [disabled]="!f.valid" class="btn btn-success pr-4 pl-4" data-dismiss="modal"
+               >Add</button>
+              <button type="button" class="btn btn-danger pr-3 pl-3 " data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </form>
+       
+      </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- Edit Model -->
+<div class="modal fade" id="EditTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body text">
+        <h5> Edit</h5>
+        <form #f="ngForm">
+          <div class="form-group">
+            <label for="name_ar">Name In Arabic:</label>
+            <input type="text" ngModel name="name_ar" required class="form-control" id="name_ar">
+          </div>
+          <div class="form-group">
+            <label for="name_en">Name In English:</label>
+            <input type="text" required  ngModel name="name_en" class="form-control" id="name_en">
+          </div>
+          <div class="form-group">
+            <label for="dpt">Department:</label>
+            <input type="text" required  ngModel name="Department"  class="form-control" id="dpt">
+          </div>
+          <div class="form-group">
+            <label for="mng">Manager:</label>
+            <input type="text" required ngModel name="Manager" class="form-control" id="mng">
+          </div>
+          <div class="form-group">
+            <label for="JnD">Join Date:</label>
+            <input type="text" required  ngModel name="date" class="form-control" id="JnD">
+          </div>
+          <div class="modal-footer">
+            <div class="m-auto">
+              <button type="submit" [disabled]="!f.valid" class="btn btn-success pr-4 pl-4" data-dismiss="modal"
+               >Add</button>
+              <button type="button" class="btn btn-danger pr-3 pl-3 " data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </form>
+       
+      </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- Details Model -->
+<div class="modal fade" id="TaskDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body text">
+        <h5>Empolyee Detalis</h5>
+        
+          <div class="lable row form-group">
+            <label for="name_ar" class="h5 col-6">Name In Arabic:</label>
+            <span class="h5 col-6">ANNN</span>
+            <!-- <input type="text" ngModel name="name_ar" required class="form-control" id="name_ar"> -->
+          </div>
+          <div class="form-group">
+            <label for="name_en">Name In English:</label>
+            <input type="text" required  ngModel name="name_en" class="form-control" id="name_en">
+          </div>
+          <div class="form-group">
+            <label for="dpt">Department:</label>
+            <input type="text" required  ngModel name="Department"  class="form-control" id="dpt">
+          </div>
+          <div class="form-group">
+            <label for="mng">Manager:</label>
+            <input type="text" required ngModel name="Manager" class="form-control" id="mng">
+          </div>
+          <div class="form-group">
+            <label for="JnD">Join Date:</label>
+            <input type="text" required  ngModel name="date" class="form-control" id="JnD">
+          </div>
+          <!-- <div class="modal-footer">
+            <div class="m-auto">
+              <button type="submit" [disabled]="!f.valid" class="btn btn-success pr-4 pl-4" data-dismiss="modal"
+               >Add</button>
+              <button type="button" class="btn btn-danger pr-3 pl-3 " data-dismiss="modal">Cancel</button>
+            </div>
+          </div> -->
+       
+       
+      </div>
+   
+    </div>
+  </div>
+</div>

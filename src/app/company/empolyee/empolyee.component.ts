@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class EmpolyeeComponent implements OnInit {
   urlTree: UrlTree;
   id : any;
-
+Employees:any;
   constructor( private _service : ServiceService, private _router: Router) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class EmpolyeeComponent implements OnInit {
 this.urlTree = this._router.parseUrl(this._router.url);
     this.id = this.urlTree.root.children[PRIMARY_OUTLET].segments[2].path;
     console.log("id", this.id)
-
+   this._service.GetAllEmployees().subscribe(res=>this.Employees=res.json());
   }
 
 }

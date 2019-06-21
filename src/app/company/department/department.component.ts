@@ -8,10 +8,13 @@ import { ServiceService } from 'src/app/Services/service.service';
 })
 export class DepartmentComponent implements OnInit {
   Departments: any;
+  SelectedDep:any;
   constructor(private _service : ServiceService) { }
 
   ngOnInit() {
     this._service.GetAllDepartments().subscribe(res =>this.Departments=res.json()); 
   }
-
+  ChangeSelected(Dep){
+  this.SelectedDep=Dep;
+}
 }

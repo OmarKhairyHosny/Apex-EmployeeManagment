@@ -7,10 +7,11 @@ import { ServiceService } from 'src/app/Services/service.service';
   styleUrls: ['./taskes.component.css']
 })
 export class TaskesComponent implements OnInit {
-
+Tasks:any;
   constructor(private _service : ServiceService) { }
 
   ngOnInit() {
+    this._service.GetAllTasks().subscribe(res=>this.Tasks=res.json())
   }
 
 }
